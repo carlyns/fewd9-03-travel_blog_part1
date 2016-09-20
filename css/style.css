@@ -1,0 +1,85 @@
+/* Universal Box Sizing with Inheritance & Clearfix hacks 
+
+I'll explain next class, but don't delete!! */
+@import 'https://fonts.googleapis.com/css?family=Lato';
+
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  font-family: 'Lato', sans-serif;
+}
+body {
+	margin: 5px 50px 5px 50px;
+}
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+h1 {
+	margin-bottom: 0px;
+}
+h1 a {
+	color: tan;
+	text-decoration: none;
+}
+header h2 {
+	margin-bottom: 10px;
+}
+nav a {
+	color: silver;
+	padding-right: 5px;
+}
+nav {
+}
+h3 {
+	color: silver;
+	margin: 30px 0px 5px 0px;
+	font-size: 25px;
+}
+body h2 {
+	margin: 0px 0px 20px 0px;
+}
+h2 a {
+	text-decoration: none;
+	color: black;
+}
+article p:first-letter {
+	font-size: 100px;
+	float: left;
+	padding: 30px 20px 20px 0px;
+	color: silver;
+}
+article p {
+	color: dimgrey;
+	line-height: 24px;
+}
+h4 {
+	text-align: right;
+}
+h4 a {
+	color: tan;
+	text-decoration: none;
+}
+article {
+	border-bottom: 1px solid silver;
+}
+img {
+	width: 100%;
+}
+nav .footer a {
+	text-decoration: none;
+	color: tan;
+	border-right: 1px solid dimgrey;
+}
+.footer {
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+
