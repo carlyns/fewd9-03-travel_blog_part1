@@ -1,7 +1,10 @@
+
+/* Need to use 'Customize' in GoogleFonts and grab the weights too */
+@import 'https://fonts.googleapis.com/css?family=Lato:300,400,700';
+
 /* Universal Box Sizing with Inheritance & Clearfix hacks 
 
 I'll explain next class, but don't delete!! */
-@import 'https://fonts.googleapis.com/css?family=Lato';
 
 
 html {
@@ -11,8 +14,11 @@ html {
   box-sizing: inherit;
   font-family: 'Lato', sans-serif;
 }
+
 body {
 	margin: 5px 50px 5px 50px;
+	font-weight: 300;
+	color: dimgrey;
 }
 .clearfix:before, .clearfix:after {
     content: " ";
@@ -21,8 +27,12 @@ body {
 .clearfix:after {
     clear: both;
 }
+h1, h2, h3 { /* wasn't working before bc i had a comma after h3 */
+	font-weight: 300;
+}
 h1 {
 	margin-bottom: 0px;
+	display: inline-block;
 }
 h1 a {
 	color: tan;
@@ -30,24 +40,44 @@ h1 a {
 }
 header h2 {
 	margin-bottom: 10px;
+	display: inline-block;
+	padding-left: 3%;
 }
-nav a {
+
+header nav {
+	clear: both;
+	background: silver;
+	width: 100%;
+}
+
+header nav a {
 	color: silver;
-	padding-right: 5px;
+	display: inline-block;
+	width: 16%;
+	padding: 2% 1%;
+	text-align: center;
+	border-right: 1px solid white;
+	text-decoration: none;
+	color: white;
 }
-nav {
+header nav a:last-child {
+	border-right: none;
 }
 h3 {
 	color: silver;
 	margin: 30px 0px 5px 0px;
 	font-size: 25px;
 }
-body h2 {
+h2 {
 	margin: 0px 0px 20px 0px;
 }
-h2 a {
+article h2 a {
 	text-decoration: none;
 	color: black;
+}
+.main {
+	float: left;
+	width: 60%;
 }
 article p:first-letter {
 	font-size: 100px;
@@ -56,7 +86,6 @@ article p:first-letter {
 	color: silver;
 }
 article p {
-	color: dimgrey;
 	line-height: 24px;
 }
 h4 {
@@ -72,14 +101,62 @@ article {
 img {
 	width: 100%;
 }
-nav .footer a {
+.sidebar {
+	float: left;
+	width: 40%;
+	padding: 3%;
+}
+.sidebar h4 {
+	text-align: left;
+}
+.sidebar p a {
+	color: tan;
+	text-decoration: none;
+}
+.more {
+	text-align: right;
+	font-weight: normal;
+}
+.sidebar li a {
+	color: tan;
+	text-decoration: none;
+}
+.sidebar li {
+    list-style: none;
+}
+.sidebar li:before { /* color of bullets*/
+    content: "• ";
+    color: silver; 
+}
+.sidebar ul {
+	    padding-left: 3%;
+}
+.ad {
+	border-top: 1px solid silver;
+	border-bottom: 1px solid silver;
+	padding: 10% 0;
+}
+.ad:before, .ad:after { /* -------------- this didn't work 
+	border-bottom: 1px solid silver;
+	padding: 3%;  ------- */
+}
+footer a { /* if i add nav to selectors, it doesn't work? */
 	text-decoration: none;
 	color: tan;
 	border-right: 1px solid dimgrey;
+	padding-right: 5px;
 }
-.footer {
-	margin-top: 50px;
-	margin-bottom: 20px;
+footer {
+	clear: both;
+	/* adding border around all elements helped me figure out the margin problem --*/
+	margin: 7% 0 3% 0;
+	display: inline-block; /*-- WHY DID I NEED THIS FOR MARGINS TO APPLY?  isn't a footer just a div and not inline?  --*/
+}
+footer nav a:last-child { /*-- adding a top margin doesn't work here because i'm selecting the a tag which is an inline element --*/
+	border-right: none;
+}
+footer p {
+	margin-bottom: 0;
 }
 
 
